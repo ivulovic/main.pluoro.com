@@ -1,0 +1,15 @@
+{
+  "homepage": {
+    "features": {
+      "intl": {
+        "title": "React-Intl",
+        "description": "With React-Intl you can easily internationalize your application. You can easily add translations to your application and use them in your components.",
+        "docsButton": "View Docs",
+        "localeButton": "Change Locale"
+      }
+    },
+    "title": "Home Page",
+    "description": "You're now browsing the homepage of the website."
+  },
+  "appName": "Pluoro"
+}

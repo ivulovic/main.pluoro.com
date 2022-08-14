@@ -1,0 +1,21 @@
+.reactoso.logo{
+    height: 2.5rem;
+    width: 2.5rem;
+    background-size: cover;
+    &.sm{
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+    &.l{
+        height: 4rem;
+        width: 4rem;
+    }
+    &.xl{
+        height: 6rem;
+        width: 6rem;
+    }
+    &.xxl{
+        height: 8rem;
+        width: 8rem;
+    }
+}

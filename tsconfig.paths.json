@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@reactoso-ui": ["packages/ui"],
+      "@reactoso-redux": ["packages/redux"],
+      "@reactoso-saga": ["packages/saga"],
+      "@reactoso-intl": ["packages/intl"],
+      "@reactoso-request": ["packages/request"],
+
+      "@service": ["core/service"],
+      "@repository": ["core/repository"],
+      "@translations": ["core/translations"],
+
+      "@pages/*": ["app/pages/*"],
+      "@hooks/*": ["app/hooks/*"],
+      "@utils/*": ["app/utils/*"],
+      "@providers/*": ["app/providers/*"],
+      "@components/*": ["app/components/*"],
+      "@controllers/*": ["app/controllers/*"],
+      "@implementation/*": ["app/implementation/*"],
+      "src/*": ["./src/*"]
+    }
+  }
+}
