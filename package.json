@@ -51,6 +51,7 @@
     "eslint-plugin-testing-library": "^4.6.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "copy-webpack-plugin": "^11.0.0",
     "prettier": "^2.3.0",
     "react-dom": "^18.2.0",
     "sass": "^1.53.0",
@@ -63,6 +64,7 @@
     "webpack-dev-server": "^4.9.3",
     "webpack-hot-middleware": "^2.25.1",
     "webpack-merge": "^5.8.0",
-    "webpackbar": "^5.0.2"
+    "webpackbar": "^5.0.2",
+    "workbox-webpack-plugin": "^6.5.4"
   }
 }

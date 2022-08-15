@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   // to automatically finds the local tsconfig
@@ -32,6 +33,11 @@ module.exports = {
     new CircularDependencyPlugin({
       exclude: /a\.js|node_modules/,
       failOnError: true,
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+          { from: 'static' }
+      ]
     }),
   ],
   module: {

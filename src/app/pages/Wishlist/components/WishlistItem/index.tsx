@@ -1,4 +1,4 @@
-import { Button, ExternalLink, RemoveIcon, ShareIcon, TrashIcon } from '@reactoso-ui';
+import { Button, ExternalLink, RemoveIcon } from '@reactoso-ui';
 import { useTranslation } from '@translations';
 import './style.scss';
 

@@ -10,7 +10,7 @@ module.exports = merge(baseDevelopmentConfiguration, localCommonConfiguration, {
         changeOrigin: true,
       },
       '/data': {
-        target: 'https://retrosfera.com/',
+        target: 'https://pluoro.com/',
         changeOrigin: true,
       }
     },

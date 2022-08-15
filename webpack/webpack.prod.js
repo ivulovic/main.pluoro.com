@@ -1,6 +1,7 @@
 const { merge } = require('webpack-merge');
 const baseProductionConfiguration = require('./base/webpack.prod');
 const localCommonConfiguration = require('./webpack.common');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = merge(baseProductionConfiguration, localCommonConfiguration, {
   optimization: {
@@ -36,4 +37,13 @@ module.exports = merge(baseProductionConfiguration, localCommonConfiguration, {
       },
     },
   },
+  plugins:[
+    new WorkboxPlugin.GenerateSW({
+      // these options encourage the ServiceWorkers to get in there fast
+      // and not allow any straggling "old" SWs to hang around
+      clientsClaim: true,
+      skipWaiting: true,
+      maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
+    }),
+  ]
 });

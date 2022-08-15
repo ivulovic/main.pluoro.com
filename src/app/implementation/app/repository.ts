@@ -29,8 +29,8 @@ export function* loadOne(action: PayloadAction<any>): RepositoryResult {
   const { controller, params } = action.payload;
   try {
     const url = `${createApiUrl(controller)}/${params.id}`;
-    const data = (yield call(request, url, makeGetReq())) as any;
-    yield put(actions.setData({ controller, data: [data] }));
+    const data = yield call(request, url, makeGetReq());
+    yield put(actions.setData({ controller, data: Array.isArray(data) ? data : [data] }));
   } catch (e) {
     // yield put(actions.setLoading(false));
   }

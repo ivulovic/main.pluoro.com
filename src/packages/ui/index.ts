@@ -20,3 +20,4 @@ export { default as ExternalLink } from './icons/ExternalLink';
 export { default as VirusIcon } from './icons/VirusOutline';
 export { default as PlantIcon } from './icons/PlantOutline';
 export { default as HospitalIcon } from './icons/HospitalIcon';
+export { default as NoteIcon } from './icons/NoteIcon';

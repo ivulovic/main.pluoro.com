@@ -12,7 +12,7 @@ export default function List({ source = null }): JSX.Element {
   const onRemove = (id: string): void => controller.methods.onRemove({ id });
 
   const onRemoveHandler = source == 'share' ? null : onRemove;
-
+  console.log(data, source)
   return (
     <div className="wishlist-items">
       {data?.length === 0 && <div>{t('noWishes')}</div>}
