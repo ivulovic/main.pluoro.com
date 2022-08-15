@@ -20,6 +20,7 @@ import CreateNote from '@pages/Notes/views/CreateNote';
 import NotesOverview from '@pages/Notes/views/Overview';
 import UpdateDirectory from '@pages/Notes/views/UpdateDirectory';
 import UpdateNote from '@pages/Notes/views/UpdateNote';
+import SearchPage from '@pages/SearchPage';
 import WishlistPage from '@pages/Wishlist';
 import WishlistOverview from '@pages/Wishlist/views/Overview';
 import WishlistShare from '@pages/Wishlist/views/Share';
@@ -43,7 +44,15 @@ const App = (): JSX.Element => {
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route
-            path="/login"
+            path="/search"
+            element={
+              <DefaultLayout>
+                <SearchPage />
+              </DefaultLayout>
+            }
+          />
+          <Route
+            path="/sign-in"
             element={
               isLoggedIn ? (
                 <Navigate to="/" />
@@ -54,9 +63,9 @@ const App = (): JSX.Element => {
               )
             }
           />
-          <Route path="/logout" element={!isLoggedIn ? <Navigate to="/" /> : <LogoutPage />} />
+          <Route path="/sign-out" element={!isLoggedIn ? <Navigate to="/" /> : <LogoutPage />} />
           <Route
-            path="/register"
+            path="/sign-up"
             element={
               isLoggedIn ? (
                 <Navigate to="/" />
@@ -137,9 +146,9 @@ const App = (): JSX.Element => {
           <Route
             path="/"
             element={
-              <DefaultLayout>
+              <BasicLayout>
                 <HomePage />
-              </DefaultLayout>
+              </BasicLayout>
             }
           />
 

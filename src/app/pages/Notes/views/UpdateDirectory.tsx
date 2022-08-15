@@ -5,6 +5,7 @@ import { useNotesControllerScope } from '@controllers/app';
 import { AppsScope } from '@controllers/app/settings';
 import { Input } from '@reactoso-ui';
 import { useSelector } from '@service';
+import { FormattedMessage } from '@translations';
 
 export default function UpdateDirectory(): JSX.Element {
   const {
@@ -37,7 +38,9 @@ export default function UpdateDirectory(): JSX.Element {
   return (
     <div className="view">
       <form onSubmit={handleSubmit}>
-        <h4>Directory Name</h4>
+        <h4>
+          <FormattedMessage id="directory" />
+        </h4>
         <Input value={name || model?.name} onChange={(e) => setName(e.target.value)} />
       </form>
     </div>

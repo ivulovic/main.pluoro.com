@@ -11,4 +11,7 @@ export interface IInjectRepositoryParams {
   mode?: SagaInjectionModes;
 }
 
-export type RepositoryResult = Generator<CallEffect<RequestResult> | PutEffect<AnyAction>, void>;
+export type RepositoryResult =
+  | Generator<CallEffect<RequestResult> | PutEffect<AnyAction>, void>
+  | CallEffect<RequestResult>
+  | PutEffect<AnyAction>;

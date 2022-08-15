@@ -6,9 +6,8 @@ import formatNumber from '@utils/number/formatNumber';
 import { DailyDataItem } from '../../types';
 
 export default function Sparklines({ data: { monthly, daily } }): JSX.Element {
-  const { t } = useTranslation();
+  const t = useTranslation();
   if (!monthly.length || !daily.length) return <></>;
-
   const getTimestampFromDate = (date) => {
     const dateObj = new Date(date);
     const d = dateObj.getDate();

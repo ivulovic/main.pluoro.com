@@ -4,9 +4,10 @@ import ReactQuill from 'react-quill';
 import { Button, Input } from '@reactoso-ui';
 import 'react-quill/dist/quill.snow.css';
 import './style.scss';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useTranslation } from '@translations';
 
 export default function Editor({ onSubmit, model }): JSX.Element {
+  const t = useTranslation();
   const [title, setTitle] = useState();
   const [description, setDescription] = useState();
 
@@ -56,11 +57,15 @@ export default function Editor({ onSubmit, model }): JSX.Element {
   return (
     <div className="editor">
       <div>
-        <h4>Title</h4>
+        <h4>
+          <FormattedMessage id="title" />
+        </h4>
         <Input value={title} onChange={handleOnTitleChange} />
       </div>
       <div>
-        <h4>Note</h4>
+        <h4>
+          <FormattedMessage id="notes" />
+        </h4>
         <ReactQuill
           onChange={handleOnDescriptionChange}
           theme="snow"
@@ -71,7 +76,7 @@ export default function Editor({ onSubmit, model }): JSX.Element {
       </div>
       <div>
         <Button kind="ghost" onClick={handleSubmit}>
-          <FormattedMessage id="saveChanges" />
+          <FormattedMessage id="save" />
         </Button>
       </div>
     </div>

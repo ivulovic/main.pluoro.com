@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+  <title>Pluoro</title>
+  <link>https://pluoro.com</link>
+  <description>Informacije u sekundi</description>
+  <item>
+    <title>Prijavite se</title>
+    <link>https://pluoro.com/sign-in</link>
+    <description>Prijavite se i pristupite aplikacijama koje Pluoro nudi.</description>
+  </item>
+  <item>
+    <title>COVID Statistika</title>
+    <link>https://pluoro.com/covid19</link>
+    <description>Najnovije informacije o statusu virusa Korona u Srbiji.</description>
+  </item>
+  <item>
+    <title>Zdravstvene ustanove i COVID ambulante</title>
+    <link>https://pluoro.com/ambulances</link>
+    <description>Zdravstvene ustanove koje rade u COVID režimu.</description>
+  </item>
+  <item>
+    <title>Zagadjenje i kvalitet vazduha</title>
+    <link>https://pluoro.com/air-quality</link>
+    <description>Najsvežije informacije o zagadjenju vazduha u mestima koje imaju merne stanice.</description>
+  </item>
+</channel>
+
+</rss>

@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
 
-import { useTranslation } from '@translations';
+import { FormattedMessage } from '@translations';
 import { months } from '@utils/date/covid';
 import Subtitle from 'app/components/Subtitle';
 
-import LineChartSection from '../LineChartSection';
 import { ChartDataItem, ChartDataProps } from '../../types';
+import LineChartSection from '../LineChartSection';
 
 export default function DailyCases(props): JSX.Element {
-  const { t } = useTranslation();
   const { data: initialDailyData } = props;
   const [activeMonthDate, setActiveMonthDate] = useState<Date | string>(new Date());
   const [filteredData, setFilteredData] = useState<ChartDataProps>();
@@ -78,15 +77,15 @@ export default function DailyCases(props): JSX.Element {
   return (
     <div>
       <Subtitle>
-        {t('dailyStatisticForMonth')} {t(months[dailyDateObj.getMonth()])} {dailyDateObj.getFullYear()}
+        <FormattedMessage id="dailyStatisticForMonth" /> {months[dailyDateObj.getMonth()]} {dailyDateObj.getFullYear()}
       </Subtitle>
       {filteredData && <LineChartSection data={filteredData} type="daily" />}
       <div className="chart-pagination">
         <button className="button" onClick={decreaseDailyMonth}>
-          {t('lastMonth')}
+          <FormattedMessage id="lastMonth" />
         </button>
         <button className="button" onClick={increaseDailyMonth}>
-          {t('nextMonth')}
+          <FormattedMessage id="nextMonth" />
         </button>
       </div>
     </div>

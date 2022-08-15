@@ -5,7 +5,7 @@ import { useTranslation } from '@translations';
 
 export default function AmbulancesTable(props) {
   const { data } = props;
-  const { t } = useTranslation();
+  const t = useTranslation();
   const [expanded, setExpanded] = useState({});
   const [filter, setFilter] = useState('all');
   const toggleExpanded = (id) => {
@@ -39,7 +39,7 @@ export default function AmbulancesTable(props) {
         <select className="select" onChange={handleFilterChange} value={filter}>
           <option value="all">{t('allCities')}</option>
           {options.map((x) => (
-            <option value={x}>{x}</option>
+            <option key={x} value={x}>{x}</option>
           ))}
         </select>
       </div>

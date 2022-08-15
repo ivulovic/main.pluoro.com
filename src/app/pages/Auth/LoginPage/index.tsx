@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom';
 
 import { useAuthControllerScope } from '@controllers/auth';
 import { Input, Button, Logo } from '@reactoso-ui';
-import { FormattedMessage } from '@translations';
+import { FormattedMessage, useTranslation } from '@translations';
 import '../style.scss';
 
 export function LoginPage() {
-  const t = (s) => s;
+  const t = useTranslation();
   const auth = useAuthControllerScope();
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
@@ -30,34 +30,20 @@ export function LoginPage() {
         <Link to="/">
           <Logo className="l" />
         </Link>
-        <FormattedMessage id="auth.signIn" />
+        <FormattedMessage id="signIn" />
       </div>
       <div className="auth-form">
-        <Input
-          id="login-email"
-          label={t('email')}
-          name="email"
-          type={true ? 'text' : 'password'}
-          value={undefined}
-          onChange={onChange}
-        />
-        <Input
-          id="login-password"
-          label={t('password')}
-          name="password"
-          type={'password'}
-          value={undefined}
-          onChange={onChange}
-        />
+        <Input id="login-email" label={t('email')} name="email" type={'text'} onChange={onChange} />
+        <Input id="login-password" label={t('password')} name="password" type={'password'} onChange={onChange} />
       </div>
       <div className="auth-form-footer">
         <div>
           {t('noAccount')}{' '}
-          <Link tabIndex={-1} to="/register">
-            {t('register')}
+          <Link tabIndex={-1} to="/sign-up">
+            {t('signUp')}
           </Link>
         </div>
-        <Button onClick={onSubmit}>{t('login')}</Button>
+        <Button onClick={onSubmit}>{t('signIn')}</Button>
       </div>
     </div>
   );

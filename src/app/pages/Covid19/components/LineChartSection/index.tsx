@@ -11,7 +11,7 @@ import { LineChartProps } from '../../types';
 
 export default function LineChartSection(props: LineChartProps): JSX.Element {
   const { data, type } = props;
-  const { t } = useTranslation();
+  const t = useTranslation();
   const { width } = useOnResize();
   const chartRef = useRef<any>();
   const getChart = (chart) => {

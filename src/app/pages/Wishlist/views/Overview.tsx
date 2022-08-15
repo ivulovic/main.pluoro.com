@@ -1,21 +1,23 @@
 import { useEffect } from 'react';
 
 import { useWishlistControllerScope } from '@controllers/app';
-import { Container } from '@reactoso-ui';
+import { useTranslation } from '@translations';
 
 import Form from '../components/Form';
 import List from '../components/List';
+
 import '../style.scss';
 
 export default function WishlistOverview(): JSX.Element {
   const scope = useWishlistControllerScope();
+  const t = useTranslation();
   useEffect(() => {
     scope.methods.onLoadAll();
   }, []);
   return (
-    <Container size="lg" direction="column" className="page-wrapper wishlist-container">
+    <div className="page-wrapper wishlist-container">
       <Form />
       <List />
-    </Container>
+    </div>
   );
 }

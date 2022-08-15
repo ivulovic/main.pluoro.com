@@ -1,11 +1,10 @@
 import Subtitle from '@components/Subtitle';
-import { useTranslation } from '@translations';
+import { FormattedMessage } from '@translations';
 
-import StackedBarSection from '../StackedBarSection';
 import { ChartDataItem } from '../../types';
+import StackedBarSection from '../StackedBarSection';
 
 export default function CasesByMonth(props): JSX.Element {
-  const { t } = useTranslation();
   const { data } = props;
   if (!data) return <></>;
   const confirmed: Array<ChartDataItem> = [];
@@ -28,7 +27,9 @@ export default function CasesByMonth(props): JSX.Element {
   });
   return (
     <div>
-      <Subtitle>{t('monthlyStatistic')}</Subtitle>
+      <Subtitle>
+        <FormattedMessage id="monthlyStatistic" />
+      </Subtitle>
       <StackedBarSection
         data={{
           confirmed,

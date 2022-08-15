@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import '../style.scss';
 import { useAuthControllerScope } from '@controllers/auth';
 import { Button, Input, Logo } from '@reactoso-ui';
-import { FormattedMessage } from '@translations';
+import { FormattedMessage, useTranslation } from '@translations';
 
 export function RegisterPage() {
   const auth = useAuthControllerScope();
-  const t = (s) => s;
+  const t = useTranslation();
 
   const [email, setEmail] = React.useState('');
   const [firstName, setFirstName] = React.useState('');
@@ -49,62 +49,33 @@ export function RegisterPage() {
         <Link to="/">
           <Logo className="l" />
         </Link>
-        <FormattedMessage id="auth.signUp" />
+        <FormattedMessage id="signUp" />
       </div>
       <div className="auth-form">
         <div className="row">
-          <Input
-            id="register-firstName"
-            label={t('firstName')}
-            name="firstName"
-            type={'text'}
-            value={undefined}
-            onChange={onChange}
-          />
-          <Input
-            id="register-lastName"
-            label={t('lastName')}
-            name="lastName"
-            type={'text'}
-            value={undefined}
-            onChange={onChange}
-          />
+          <Input id="register-firstName" label={t('firstName')} name="firstName" type={'text'} onChange={onChange} />
+          <Input id="register-lastName" label={t('lastName')} name="lastName" type={'text'} onChange={onChange} />
         </div>
-        <Input
-          id="register-email"
-          label={t('email')}
-          name="email"
-          type={'text'}
-          value={undefined}
-          onChange={onChange}
-        />
+        <Input id="register-email" label={t('email')} name="email" type={'text'} onChange={onChange} />
         <div className="row">
-          <Input
-            id="login-password"
-            label={t('password')}
-            name="password"
-            type={'password'}
-            value={undefined}
-            onChange={onChange}
-          />
+          <Input id="login-password" label={t('password')} name="password" type={'password'} onChange={onChange} />
           <Input
             id="login-confirmPassword"
             label={t('confirmPassword')}
             name="confirmPassword"
             type={'password'}
-            value={undefined}
             onChange={onChange}
           />
         </div>
       </div>
       <div className="auth-form-footer">
         <div>
-          {t('alreadyRegistered')}
-          <Link tabIndex={-1} to="/login">
-            {t('login')}
+          {t('alreadyRegistered')}{' '}
+          <Link tabIndex={-1} to="/sign-in">
+            {t('signIn')}
           </Link>
         </div>
-        <Button onClick={onSubmit}>{t('register')}</Button>
+        <Button onClick={onSubmit}>{t('signUp')}</Button>
       </div>
     </div>
   );

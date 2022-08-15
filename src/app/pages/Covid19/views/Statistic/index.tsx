@@ -7,7 +7,7 @@ import { useCovidControllerScope } from '@controllers/open-source';
 import { OpenSourceScope } from '@implementation/open-source/settings';
 import { Loading } from '@reactoso-ui';
 import { useSelector } from '@service';
-import { useTranslation } from '@translations';
+import { FormattedMessage } from '@translations';
 
 import CasesByMonth from '../../components/CasesByMonth';
 import CasesOvertime from '../../components/CasesOvertime';
@@ -18,7 +18,6 @@ const FileNameMonthly = 'monthlySummary.json';
 const FileNameDaily = 'dailySummary.json';
 
 export default function Statistic() {
-  const { t } = useTranslation();
   const {
     methods,
     implementation: {
@@ -48,9 +47,12 @@ export default function Statistic() {
           {t('covid19Title')} | {t('graphicView')}
         </title>
       </Helmet> */}
-      {/* <Subtitle>{t('graphicViewSubtitle')}</Subtitle> */}
-      <Title>{t('covid19Title')}</Title>
-      <Subtitle>{t('covid19Description')}</Subtitle>
+      <Title>
+        <FormattedMessage id="covid19Title" />
+      </Title>
+      <Subtitle>
+        <FormattedMessage id="covid19Description" />
+      </Subtitle>
       <Sparklines
         data={{
           monthly,

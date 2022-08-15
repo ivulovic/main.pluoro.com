@@ -6,9 +6,11 @@ import { useAuthControllerScope } from '@controllers/auth';
 import { IAuthenticatedUser } from '@implementation/auth/types';
 import { Button, Input, Loading, ShareIcon } from '@reactoso-ui';
 import { useSelector } from '@service';
+import { useTranslation } from '@translations';
 import { copyToClipboard } from '@utils/copyToClipboard';
 
 export default function Form(): JSX.Element {
+  const t = useTranslation();
   const controller = useWishlistControllerScope();
   const authController = useAuthControllerScope();
   const user: IAuthenticatedUser = useSelector(authController.implementation.auth.selectors.selectAuthUser);
@@ -27,7 +29,7 @@ export default function Form(): JSX.Element {
   }
   const handleWishlistLinkCopy = (): void => {
     const sharedWishlistLink = `${window.origin}/wishlist/share?id=` + user.email;
-    copyToClipboard(sharedWishlistLink, () => alert('Link to your watchlist is coppied.'));
+    copyToClipboard(sharedWishlistLink, () => alert(t('wishlistLinkCopied')));
   };
 
   return (
@@ -36,16 +38,16 @@ export default function Form(): JSX.Element {
         <Input
           disabled={isLoading}
           pattern="https://.*"
-          placeholder="Enter valid URL of a product"
+          placeholder={t('wishlistPlaceholder')}
           required
           type="url"
           value={url}
           onChange={(e): void => setUrl(e.target.value)}
         />
-        <Button kind="ghost" onClick={handleWishlistLinkCopy} title="Copy link to your wishlist">
-          <ShareIcon />
-        </Button>
       </form>
+      <Button kind="ghost" onClick={handleWishlistLinkCopy}>
+        <ShareIcon />
+      </Button>
     </div>
   );
 }

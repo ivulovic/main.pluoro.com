@@ -21,4 +21,3 @@ export {
 } from 'react-intl';
 
 export { default as useLanguageProvider } from './useIntlProvider';
-export { useTranslation } from 'react-i18next';

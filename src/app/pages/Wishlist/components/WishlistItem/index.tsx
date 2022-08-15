@@ -1,7 +1,9 @@
 import { Button, ExternalLink, RemoveIcon, ShareIcon, TrashIcon } from '@reactoso-ui';
+import { useTranslation } from '@translations';
 import './style.scss';
 
 export default function WishlistItem({ _id, title, url, image, createdAt, onRemove }): JSX.Element {
+  const t = useTranslation();
   return (
     <div className="media-card">
       <div className="media-card-wrapper">
@@ -15,7 +17,9 @@ export default function WishlistItem({ _id, title, url, image, createdAt, onRemo
       <div className="media-card-name">{title}</div>
 
       <div className="media-card-view">
-        <p className="date">DATE ADDED {new Date(createdAt).toLocaleDateString()}</p>
+        <p className="date">
+          {t('date')}: {new Date(createdAt).toLocaleDateString()}
+        </p>
         <div className="media-card-controls">
           <Button
             kind="ghost"

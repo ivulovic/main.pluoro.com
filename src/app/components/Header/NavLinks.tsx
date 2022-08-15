@@ -3,9 +3,10 @@ import { NavLink } from 'react-router-dom';
 import { useAuthControllerScope } from '@controllers/auth';
 // import { IAuthenticatedUser } from '@implementation/auth/types';
 import { useSelector } from '@service';
+import { useTranslation } from '@translations';
 
 export default function NavLinks(): JSX.Element {
-  const t = (s) => s;
+  const t = useTranslation();
   const {
     implementation: {
       auth: { selectors },
@@ -18,11 +19,11 @@ export default function NavLinks(): JSX.Element {
       <NavLink to="/covid19" className="nav-item">
         {t('covid19Title')}
       </NavLink>
-      <NavLink to="/ambulances" className="nav-item">
-        {t('ambulancesTitle')}
-      </NavLink>
       <NavLink to="/air-quality" className="nav-item">
         {t('airQualityTitle')}
+      </NavLink>
+      <NavLink to="/ambulances" className="nav-item">
+        {t('ambulancesTitle')}
       </NavLink>
       {isUserLoggedIn ? (
         <>
@@ -47,13 +48,13 @@ export default function NavLinks(): JSX.Element {
         {t('settings')}
       </NavLink> */}
       {isUserLoggedIn && (
-        <NavLink to="/logout" className="nav-item">
-          {t('logout')}
+        <NavLink to="/sign-out" className="nav-item">
+          {t('signOut')}
         </NavLink>
       )}
       {!isUserLoggedIn && (
-        <NavLink to="/login" className="nav-item">
-          {t('login')}
+        <NavLink to="/sign-in" className="nav-item">
+          {t('signIn')}
         </NavLink>
       )}
     </>

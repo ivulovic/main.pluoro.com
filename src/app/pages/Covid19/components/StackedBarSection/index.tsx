@@ -11,7 +11,7 @@ import { StackedBarProps } from '../../types';
 
 export default function StackedBarSection(props: StackedBarProps) {
   const { data } = props;
-  const { t } = useTranslation();
+  const t = useTranslation();
   const { width } = useOnResize();
   const chartRef = useRef<any>();
   const getChart = (chart) => {

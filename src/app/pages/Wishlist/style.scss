@@ -10,12 +10,10 @@
         color: var(--body-color);
     }
     .form{
+        display: flex;
+        gap: 1rem;
         form{
-            display: flex;
-            gap: 1rem;
-            .input-wrapper{
-                flex: 1;
-            }
+            flex: 1;
         }
     }
 

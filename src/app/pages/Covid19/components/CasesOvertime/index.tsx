@@ -1,11 +1,10 @@
 import Subtitle from '@components/Subtitle';
-import { useTranslation } from '@translations';
+import { FormattedMessage } from '@translations';
 
-import LineChartSection from '../LineChartSection';
 import { ChartDataItem, MonthlyDataProps } from '../../types';
+import LineChartSection from '../LineChartSection';
 
 export default function CasesOvertime(props: MonthlyDataProps): JSX.Element {
-  const { t } = useTranslation();
   const { data } = props;
   if (!data) return <></>;
   const confirmed: Array<ChartDataItem> = [];
@@ -24,7 +23,9 @@ export default function CasesOvertime(props: MonthlyDataProps): JSX.Element {
   });
   return (
     <div>
-      <Subtitle>{t('statisticOvertime')}</Subtitle>
+      <Subtitle>
+        <FormattedMessage id="statisticOverview" />
+      </Subtitle>
       <LineChartSection
         data={{
           deaths,

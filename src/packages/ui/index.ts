@@ -17,3 +17,6 @@ export { default as AddIcon } from './icons/AddIcon';
 export { default as UpdateIcon } from './icons/UpdateIcon';
 export { default as RemoveIcon } from './icons/RemoveIcon';
 export { default as ExternalLink } from './icons/ExternalLink';
+export { default as VirusIcon } from './icons/VirusOutline';
+export { default as PlantIcon } from './icons/PlantOutline';
+export { default as HospitalIcon } from './icons/HospitalIcon';

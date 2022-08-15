@@ -6,6 +6,7 @@ import { useAirQualityControllerScope } from '@controllers/open-source';
 import { OpenSourceScope } from '@implementation/open-source/settings';
 import { Loading } from '@reactoso-ui';
 import { useSelector } from '@service';
+import { useTranslation } from '@translations';
 import formatNumber from '@utils/number/formatNumber';
 import './style.scss';
 
@@ -22,7 +23,7 @@ export default function Page(): JSX.Element {
       },
     },
   } = useAirQualityControllerScope();
-  const t = (s) => s;
+  const t = useTranslation();
   const data = useSelector((s) => selectData(s, `${OpenSourceScope.Sepa}/${FileName}`)) || [];
   const isLoading = useSelector((s) => selectLoading(s, `${OpenSourceScope.Sepa}/${FileName}`)) || false;
 
@@ -51,7 +52,11 @@ export default function Page(): JSX.Element {
   }, [data]);
 
   if (isLoading) {
-    return  <div className="page-wrapper"><Loading /></div>;
+    return (
+      <div className="page-wrapper">
+        <Loading />
+      </div>
+    );
   }
   return (
     <div className="page-wrapper air-quality-page">
