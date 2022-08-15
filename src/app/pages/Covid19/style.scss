@@ -58,6 +58,9 @@ svg path{
     appearance: none; 
     cursor: pointer;
     width: 100%;
+    &:focus{
+      border: 1px solid var(--text)!important;
+    }
     option{
       text-transform: uppercase;
       background-color: var(--background);

@@ -12,6 +12,13 @@
     justify-content: center;
     gap: 1rem;
   }
+  .controls svg{
+    color: var(--border-dark);
+    transition: all 0.3s ease;
+    &:hover{
+      color: var(--text);
+    }
+  }
 }
 @media screen and (max-width: 640px) {
     .notes-form{

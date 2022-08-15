@@ -39,6 +39,9 @@
     -moz-appearance: none;
     appearance: none; 
     cursor: pointer;
+    &:focus{
+      border: 1px solid var(--text)!important;
+    }
     width: 100%;
     option{
       text-transform: uppercase;

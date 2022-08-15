@@ -4,6 +4,7 @@ import ReactQuill from 'react-quill';
 import { Button, Input } from '@reactoso-ui';
 import 'react-quill/dist/quill.snow.css';
 import './style.scss';
+import { FormattedMessage } from 'react-intl';
 
 export default function Editor({ onSubmit, model }): JSX.Element {
   const [title, setTitle] = useState();
@@ -69,7 +70,9 @@ export default function Editor({ onSubmit, model }): JSX.Element {
         ></ReactQuill>
       </div>
       <div>
-        <Button onClick={handleSubmit}>Save Changes</Button>
+        <Button kind="ghost" onClick={handleSubmit}>
+          <FormattedMessage id="saveChanges" />
+        </Button>
       </div>
     </div>
   );

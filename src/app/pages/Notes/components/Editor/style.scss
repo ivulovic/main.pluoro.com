@@ -6,10 +6,12 @@
 }
 .ql-editor {
   min-height: 250px;
+  &:focus{
+    border: 1px solid var(--text)!important;
+  }
 }
 .ql-container.ql-snow {
-border: 1px solid var(--border-light)!important;
-
+  border: 1px solid var(--border-light)!important;
   font-size: unset;
 }
 
@@ -19,8 +21,7 @@ main .ql-toolbar.ql-snow,
   color: var(--neutral) !important;
 }
 .ql-toolbar {
-border: 1px solid var(--border-light)!important;
-    
+  border: 1px solid var(--border-light)!important;
 }
 .ql-container {
   height: unset !important;
