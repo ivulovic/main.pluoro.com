@@ -50,11 +50,13 @@ export default function Page(): JSX.Element {
     return arr;
   }, [data]);
 
+  if (isLoading) {
+    return  <div className="page-wrapper"><Loading /></div>;
+  }
   return (
     <div className="page-wrapper air-quality-page">
       <Title>{t('airQualityTitle')}</Title>
       <Subtitle>{t('airQualityDescription')}</Subtitle>
-      {isLoading && <Loading />}
       {dataArr.length && !isLoading ? (
         <>
           <div className="filter">

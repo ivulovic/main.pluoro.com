@@ -14,6 +14,12 @@ import CovidPage from '@pages/Covid19';
 import Ambulances from '@pages/Covid19/views/Ambulances';
 import Statistic from '@pages/Covid19/views/Statistic';
 import HomePage from '@pages/Home';
+import NotesPage from '@pages/Notes';
+import CreateDirectory from '@pages/Notes/views/CreateDirectory';
+import CreateNote from '@pages/Notes/views/CreateNote';
+import NotesOverview from '@pages/Notes/views/Overview';
+import UpdateDirectory from '@pages/Notes/views/UpdateDirectory';
+import UpdateNote from '@pages/Notes/views/UpdateNote';
 import WishlistPage from '@pages/Wishlist';
 import WishlistOverview from '@pages/Wishlist/views/Overview';
 import WishlistShare from '@pages/Wishlist/views/Share';
@@ -26,7 +32,11 @@ const App = (): JSX.Element => {
   const appStatus = useSelector(authController.implementation.auth.selectors.selectAppStatus);
   const isLoggedIn = useSelector(authController.implementation.auth.selectors.selectIsLoggedIn);
   if (appStatus === AppStatusEnum.NotReady) {
-    return <Loading />;
+    return (
+      <div className="loading-overlay">
+        <Loading />
+      </div>
+    );
   }
   return (
     <>
@@ -57,23 +67,36 @@ const App = (): JSX.Element => {
               )
             }
           />
-          <Route path="/wishlist" element={<WishlistPage />}>
-            <Route
-              path=""
-              element={
+          <Route
+            path="/notes"
+            element={
+              isLoggedIn ? (
                 <DefaultLayout>
-                  <WishlistOverview />
+                  <NotesPage />
                 </DefaultLayout>
-              }
-            />
-            <Route
-              path="share"
-              element={
-                <DefaultLayout>
-                  <WishlistShare />
-                </DefaultLayout>
-              }
-            />
+              ) : (
+                <Navigate to="/" />
+              )
+            }
+          >
+            <Route path="" element={<NotesOverview />} />
+            <Route path="create-directory" element={<CreateDirectory />} />
+            <Route path=":directoryId">
+              <Route path="" element={<CreateNote />} />
+              <Route path="update" element={<UpdateDirectory />} />
+              <Route path=":noteId" element={<UpdateNote />} />
+            </Route>
+          </Route>
+          <Route
+            path="/wishlist"
+            element={
+              <DefaultLayout>
+                <WishlistPage />
+              </DefaultLayout>
+            }
+          >
+            <Route path="" element={<WishlistOverview />} />
+            <Route path="share" element={<WishlistShare />} />
           </Route>
           <Route
             path="/covid19"

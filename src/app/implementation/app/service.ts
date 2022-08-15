@@ -24,6 +24,10 @@ const _service = createService({
       const { controller } = action.payload;
       state.loading[controller.id] = true;
     },
+    update(state, action: PayloadAction<any>) {
+      const { controller } = action.payload;
+      state.loading[controller.id] = true;
+    },
     loadAll(state, action: PayloadAction<any>) {
       const { controller, data } = action.payload;
       state.loading[controller.id] = data;
@@ -50,11 +54,17 @@ const _service = createService({
       state.loading[controller.id] = false;
       state.data[controller.id] = data;
     },
+    updateData(state, action: PayloadAction<any>) {
+      const { controller, data } = action.payload;
+      state.error = null;
+      state.loading[controller.id] = false;
+      state.data[controller.id] = state.data[controller.id].map((x) => (x._id === data._id ? { ...x, ...data } : x));
+    },
     addData(state, action: PayloadAction<any>) {
       const { controller, data } = action.payload;
       state.error = null;
       state.loading[controller.id] = false;
-      state.data[controller.id] = [...(state.data[controller.id] || []), data];
+      state.data[controller.id] = [data, ...(state.data[controller.id] || [])];
     },
     removeData(state, action: PayloadAction<any>) {
       const { controller, data } = action.payload;

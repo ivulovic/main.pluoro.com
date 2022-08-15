@@ -13,3 +13,7 @@ export { default as TrashIcon } from './icons/TrashIcon';
 export { default as ShareIcon } from './icons/ShareIcon';
 export { default as ChevronDown } from './icons/ChevronDown';
 export { default as ChevronRight } from './icons/ChevronRight';
+export { default as AddIcon } from './icons/AddIcon';
+export { default as UpdateIcon } from './icons/UpdateIcon';
+export { default as RemoveIcon } from './icons/RemoveIcon';
+export { default as ExternalLink } from './icons/ExternalLink';

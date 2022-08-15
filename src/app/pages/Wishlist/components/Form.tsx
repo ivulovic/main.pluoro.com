@@ -42,7 +42,7 @@ export default function Form(): JSX.Element {
           value={url}
           onChange={(e): void => setUrl(e.target.value)}
         />
-        <Button onClick={handleWishlistLinkCopy} title="Copy link to your wishlist">
+        <Button kind="ghost" onClick={handleWishlistLinkCopy} title="Copy link to your wishlist">
           <ShareIcon />
         </Button>
       </form>

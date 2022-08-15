@@ -1,0 +1,27 @@
+.editor {
+  min-height: 250px;
+  display: grid;
+  gap: 1.5rem;
+  border-color: transparent !important;
+}
+.ql-editor {
+  min-height: 250px;
+}
+.ql-container.ql-snow {
+border: 1px solid var(--border-light)!important;
+
+  font-size: unset;
+}
+
+main .ql-toolbar.ql-snow,
+.ql-blank::before {
+  border-color: transparent;
+  color: var(--neutral) !important;
+}
+.ql-toolbar {
+border: 1px solid var(--border-light)!important;
+    
+}
+.ql-container {
+  height: unset !important;
+}

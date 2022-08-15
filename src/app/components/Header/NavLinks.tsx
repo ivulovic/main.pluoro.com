@@ -26,6 +26,9 @@ export default function NavLinks(): JSX.Element {
       </NavLink>
       {isUserLoggedIn ? (
         <>
+          <NavLink to="/notes" className="nav-item">
+            {t('notesTitle')}
+          </NavLink>
           <NavLink to="/wishlist" className="nav-item">
             {t('wishlistTitle')}
           </NavLink>

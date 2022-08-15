@@ -5,10 +5,19 @@
   text-transform: uppercase;
   cursor: pointer;
   outline: none;
+  transition: all 0.3s ease;
   &.primary{
     color: white;
     padding: 0.6rem;
     background-color: var(--primary);
+  }
+  &.ghost{
+    background-color: transparent;
+    color: var(--border-dark);
+    padding: 0.45rem;
+    &:hover{
+        color: var(--text);
+    }
   }
   &.group-button{
     color: white;

@@ -1,4 +1,4 @@
-import { Button, ShareIcon, TrashIcon } from '@reactoso-ui';
+import { Button, ExternalLink, RemoveIcon, ShareIcon, TrashIcon } from '@reactoso-ui';
 import './style.scss';
 
 export default function WishlistItem({ _id, title, url, image, createdAt, onRemove }): JSX.Element {
@@ -13,21 +13,23 @@ export default function WishlistItem({ _id, title, url, image, createdAt, onRemo
         ></div>
       </div>
       <div className="media-card-name">{title}</div>
+
       <div className="media-card-view">
-        <p>Date added: {new Date(createdAt).toLocaleDateString()}</p>
+        <p className="date">DATE ADDED {new Date(createdAt).toLocaleDateString()}</p>
         <div className="media-card-controls">
           <Button
+            kind="ghost"
             onClick={() => {
               window.open(url, '_blank');
               return false;
             }}
             title="Open wish in a new window"
           >
-            <ShareIcon />
+            <ExternalLink width="1.2rem" height="1.2rem" />
           </Button>
           {onRemove && (
-            <Button onClick={() => onRemove(_id)} title="Remove wish">
-              <TrashIcon />
+            <Button kind="ghost" onClick={() => onRemove(_id)} title="Remove wish">
+              <RemoveIcon width="1.1rem" height="1.1rem" />
             </Button>
           )}
         </div>
