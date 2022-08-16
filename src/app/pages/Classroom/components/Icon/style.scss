@@ -1,0 +1,50 @@
+.icon {
+    -webkit-transition-delay: 0.15s;
+    transition-delay: 0.15s;
+  }
+  
+  .load-icons .icon {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  
+  .icon {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    transition: opacity 0.8s, transform 0.8s;
+    cursor: pointer;
+  }
+  
+  .active .icon-title {
+    background: var(--border-light);
+  }
+  .active .icon-image {
+    background: var(--border-light);
+  }
+  
+  .icon-image {
+    width: 5.6rem;
+    height: 4.6rem;
+    position: relative;
+    border-radius: 10px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .icon-title {
+    font-weight: bold;
+    font-size: 12px;
+    color: var(--text);
+    margin-top: 0px;
+    margin-top: 8px;
+    max-width: 5.6rem;
+    border-radius: 6px;
+    padding: 5px;
+    box-sizing: border-box;
+    line-height: 15px;
+  }
+  

@@ -1,0 +1,71 @@
+.folder {
+  border-radius: 10px;
+  position: absolute;
+  left: 110px;
+  top: 0;
+  box-shadow: 2rem 2rem 3rem rgba(0, 0, 0, 0.2);
+  &.file-explorer {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: -webkit-transform 0.5s, visibility 0.2s, opacity 0.2s;
+    transition: transform 0.5s, visibility 0.2s, opacity 0.2s;
+    -webkit-transform-origin: left right;
+    transform-origin: left right;
+  }
+  button {
+    background-color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    color: white;
+  }
+  &.active-folder {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  &:not(.in-focus) {
+    opacity: 0.25;
+    z-index: 1;
+  }
+  &.in-focus {
+    opacity: 1;
+    z-index: 999;
+  }
+  .folder-panel {
+    background: #ddd;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    border-radius: 10px 10px 0 0;
+  }
+  .folder-close {
+    position: absolute;
+    top: 30%;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+  }
+  .folder-title {
+    font-size: 12px;
+    color: var(--text);
+    display: inline-block;
+    // vertical-align: center;
+    font-weight: bold;
+    text-shadow: none;
+  }
+  .folder-inner {
+    background: var(--background);
+    padding: 2rem;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}

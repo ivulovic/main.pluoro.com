@@ -21,3 +21,6 @@ export { default as VirusIcon } from './icons/VirusOutline';
 export { default as PlantIcon } from './icons/PlantOutline';
 export { default as HospitalIcon } from './icons/HospitalIcon';
 export { default as NoteIcon } from './icons/NoteIcon';
+export { default as RobotIcon } from './icons/RobotIcon';
+export { default as FolderIcon } from './icons/FolderIcon';
+export { default as EducationIcon } from './icons/EducationIcon';

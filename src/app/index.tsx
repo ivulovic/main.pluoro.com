@@ -13,6 +13,7 @@ import { RegisterPage } from '@pages/Auth/RegisterPage';
 import CovidPage from '@pages/Covid19';
 import Ambulances from '@pages/Covid19/views/Ambulances';
 import Statistic from '@pages/Covid19/views/Statistic';
+import ClassroomPage from '@pages/Classroom';
 import HomePage from '@pages/Home';
 import NotesPage from '@pages/Notes';
 import CreateDirectory from '@pages/Notes/views/CreateDirectory';
@@ -140,6 +141,14 @@ const App = (): JSX.Element => {
             element={
               <DefaultLayout>
                 <AboutPage />
+              </DefaultLayout>
+            }
+          />
+          <Route
+            path="/classroom"
+            element={
+              <DefaultLayout>
+                <ClassroomPage />
               </DefaultLayout>
             }
           />
