@@ -16,18 +16,6 @@ export default function NavLinks(): JSX.Element {
   const isUserLoggedIn = useSelector(selectors.selectIsLoggedIn);
   return (
     <>
-      <NavLink to="/covid19" className="nav-item">
-        {t('covid19Title')}
-      </NavLink>
-      <NavLink to="/air-quality" className="nav-item">
-        {t('airQualityTitle')}
-      </NavLink>
-      <NavLink to="/ambulances" className="nav-item">
-        {t('ambulancesTitle')}
-      </NavLink>
-      <NavLink to="/classroom" className="nav-item">
-        {t('classroomTitle')}
-      </NavLink>
       {isUserLoggedIn ? (
         <>
           <NavLink to="/notes" className="nav-item">
@@ -35,6 +23,9 @@ export default function NavLinks(): JSX.Element {
           </NavLink>
           <NavLink to="/wishlist" className="nav-item">
             {t('wishlistTitle')}
+          </NavLink>
+          <NavLink to="/classroom" className="nav-item">
+            {t('classroomTitle')}
           </NavLink>
           {/* <NavLink to="/applications/cryptoexchange" className="nav-item">
             {t('cryptoexchangeTitle')}
@@ -47,6 +38,15 @@ export default function NavLinks(): JSX.Element {
           </NavLink> */}
         </>
       )}
+      <NavLink to="/covid19" className="nav-item">
+        {t('covid19Title')}
+      </NavLink>
+      <NavLink to="/air-quality" className="nav-item">
+        {t('airQualityTitle')}
+      </NavLink>
+      <NavLink to="/ambulances" className="nav-item">
+        {t('ambulancesTitle')}
+      </NavLink>
       {/* <NavLink to="/settings" className="nav-item">
         {t('settings')}
       </NavLink> */}

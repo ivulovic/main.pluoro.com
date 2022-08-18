@@ -1,9 +1,9 @@
-.education-desktop{
+.classroom-desktop{
     position: relative;
     box-sizing: border-box;
     .column-list{
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
     }
     .iframe{
@@ -11,4 +11,15 @@
         height: 93vh;
         border: none;
     }
+    @media screen and (max-width: 640px) {
+        .column-list{
+            grid-template-columns: repeat(1, 1fr);
+            .folder{
+                min-width: unset;
+                min-height: unset;
+            }
+        }
+    
+      }
   }
+

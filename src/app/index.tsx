@@ -10,10 +10,16 @@ import AirQualityPage from '@pages/AirQuality';
 import { LoginPage } from '@pages/Auth/LoginPage';
 import LogoutPage from '@pages/Auth/LogoutPage';
 import { RegisterPage } from '@pages/Auth/RegisterPage';
+import ClassroomPage from '@pages/Classroom';
+import CreateSubject from '@pages/Classroom/views/CreateSubject';
+import CreateTopic from '@pages/Classroom/views/CreateTopic';
+import ClassroomOverview from '@pages/Classroom/views/Overview';
+import ClassroomShare from '@pages/Classroom/views/Share';
+import UpdateSubject from '@pages/Classroom/views/UpdateSubject';
+import UpdateTopic from '@pages/Classroom/views/UpdateTopic';
 import CovidPage from '@pages/Covid19';
 import Ambulances from '@pages/Covid19/views/Ambulances';
 import Statistic from '@pages/Covid19/views/Statistic';
-import ClassroomPage from '@pages/Classroom';
 import HomePage from '@pages/Home';
 import NotesPage from '@pages/Notes';
 import CreateDirectory from '@pages/Notes/views/CreateDirectory';
@@ -97,6 +103,39 @@ const App = (): JSX.Element => {
               <Route path=":noteId" element={<UpdateNote />} />
             </Route>
           </Route>
+
+          <Route
+            path="/classroom"
+            element={
+              isLoggedIn ? (
+                <DefaultLayout>
+                  <ClassroomPage />
+                </DefaultLayout>
+              ) : (
+                <Navigate to="/" />
+              )
+            }
+          >
+            <Route path="" element={<ClassroomOverview />} />
+            <Route path="create-subject" element={<CreateSubject />} />
+            <Route path=":subjectId">
+              <Route path="" element={<CreateTopic />} />
+              <Route path="update-subject" element={<UpdateSubject />} />
+              <Route path=":topicId" element={<UpdateTopic />} />
+            </Route>
+          </Route>
+
+          <Route
+            path="/classroom"
+            element={
+              <DefaultLayout>
+                <ClassroomPage />
+              </DefaultLayout>
+            }
+          >
+            <Route path="share" element={<ClassroomShare />} />
+          </Route>
+
           <Route
             path="/wishlist"
             element={
@@ -141,14 +180,6 @@ const App = (): JSX.Element => {
             element={
               <DefaultLayout>
                 <AboutPage />
-              </DefaultLayout>
-            }
-          />
-          <Route
-            path="/classroom"
-            element={
-              <DefaultLayout>
-                <ClassroomPage />
               </DefaultLayout>
             }
           />

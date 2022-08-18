@@ -1,6 +1,7 @@
 {
   "appName": "Pluoro",
   "moto": "Информације у секунди.",
+  "navigation": "Мени",
 
   "signIn": "Пријави се",
   "signOut": "Одјави се",
@@ -110,7 +111,10 @@
   "save": "Сачувај",
 
   "classroomTitle": "Учионица",
+  "createSubject": "Нови предмет",
   "subject": "Предмет",
-  "topic": "Тема"
-  
+  "subjectName": "Назив предмета",
+  "topicName": "Тема",
+  "topicLink": "Линк до теме",
+  "classroomLinkCopied": "Линк до учионице је ископиран."
 }

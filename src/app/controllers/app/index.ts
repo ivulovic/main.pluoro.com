@@ -138,6 +138,82 @@ export const useNotesController = () => {
   };
 };
 
+export const useClassroomController = () => {
+  const dispatch = useDispatch();
+  const subject = useAppController(AppsScope.ClassroomSubject);
+  const topic = useAppController(AppsScope.ClassroomTopic);
+
+  const getPayload = (params: any = null, scope) => ({
+    controller: scopeSettings[scope],
+    params,
+  });
+
+  const onLoadSubjects = (params: any) => {
+    const payload = getPayload(params, AppsScope.ClassroomSubject);
+    dispatch(subject.implementation.app.actions.loadAll(payload));
+  };
+  const onLoadSharedSubjects = (params: any) => {
+    const payload = getPayload(params, AppsScope.ClassroomSubject);
+    dispatch(subject.implementation.app.actions.loadById(payload));
+  };
+  const onLoadSubject = (params: any) => {
+    const payload = getPayload(params, AppsScope.ClassroomSubject);
+    dispatch(subject.implementation.app.actions.loadById(payload));
+  };
+  const onCreateSubject = (params: any) => {
+    const payload = getPayload(params, AppsScope.ClassroomSubject);
+    dispatch(subject.implementation.app.actions.create(payload));
+  };
+  const onUpdateSubject = (params: any) => {
+    const payload = getPayload(params, AppsScope.ClassroomSubject);
+    dispatch(subject.implementation.app.actions.update(payload));
+  };
+  const onRemoveSubject = (params: any) => {
+    const payload = getPayload(params, AppsScope.ClassroomSubject);
+    dispatch(subject.implementation.app.actions.remove(payload));
+  };
+  const onLoadTopics = (params: any) => {
+    const payload = getPayload(params, AppsScope.ClassroomTopic);
+    dispatch(topic.implementation.app.actions.loadAll(payload));
+  };
+  const onRemoveTopic = (params: any) => {
+    const payload = getPayload(params, AppsScope.ClassroomTopic);
+    dispatch(topic.implementation.app.actions.remove(payload));
+  };
+  const onLoadTopic = (params: any) => {
+    const payload = getPayload(params, AppsScope.ClassroomTopic);
+    dispatch(topic.implementation.app.actions.loadById(payload));
+  };
+  const onCreateTopic = (params: any) => {
+    const payload = getPayload(params, AppsScope.ClassroomTopic);
+    dispatch(topic.implementation.app.actions.create(payload));
+  };
+  const onUpdateTopic = (params: any) => {
+    const payload = getPayload(params, AppsScope.ClassroomTopic);
+    dispatch(topic.implementation.app.actions.update(payload));
+  };
+
+  return {
+    implementation: {
+      app: subject.implementation.app,
+    },
+    methods: {
+      onLoadSubject,
+      onLoadSubjects,
+      onCreateSubject,
+      onUpdateSubject,
+      onRemoveSubject,
+      onLoadSharedSubjects,
+      //
+      onLoadTopic,
+      onLoadTopics,
+      onCreateTopic,
+      onRemoveTopic,
+      onUpdateTopic,
+    },
+  };
+};
+
 const useAppControllerScope = () => {
   const ctx = useContext(Context);
   if (!ctx) {
@@ -148,3 +224,4 @@ const useAppControllerScope = () => {
 
 export const useWishlistControllerScope = useAppControllerScope;
 export const useNotesControllerScope = useAppControllerScope;
+export const useClassroomControllerScope = useAppControllerScope;

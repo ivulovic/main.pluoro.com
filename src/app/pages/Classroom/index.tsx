@@ -1,17 +1,17 @@
+import { useClassroomController } from '@controllers/app';
+import AppContext from '@controllers/app/context';
+
 import FolderVisibilityProvider from './FolderVisibility';
-// import Context from './context';
 import Page from './page';
 import './style.scss';
 
 export default function ClassroomPage(): JSX.Element {
-  // const controller = useHomeController();
+  const controller = useClassroomController();
   return (
-    <>
-      {/* // <Context.Provider value={{}}> */}
+    <AppContext.Provider value={controller}>
       <FolderVisibilityProvider>
         <Page />
       </FolderVisibilityProvider>
-      {/* // </Context.Provider> */}
-    </>
+    </AppContext.Provider>
   );
 }

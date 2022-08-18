@@ -29,12 +29,12 @@ const _service = createService({
       state.loading[controller.id] = true;
     },
     loadAll(state, action: PayloadAction<any>) {
-      const { controller, data } = action.payload;
-      state.loading[controller.id] = data;
+      const { controller } = action.payload;
+      state.loading[controller.id] = true;
     },
     loadById(state, action: PayloadAction<any>) {
       const { controller, data } = action.payload;
-      state.loading[controller.id] = data;
+      state.loading[controller.id] = true;
     },
     remove(state, action: PayloadAction<any>) {
       const { controller } = action.payload;

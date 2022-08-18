@@ -2,6 +2,8 @@ export const enum AppsScope {
   Wishlist = 'wishlist',
   NotesDirectory = 'notes/directories',
   Notes = 'notes/notes',
+  ClassroomSubject = 'classroom/subjects',
+  ClassroomTopic = 'classroom/topics',
 }
 
 export const settings = {
@@ -13,6 +15,12 @@ export const settings = {
   },
   [AppsScope.Notes]: {
     id: AppsScope.Notes,
+  },
+  [AppsScope.ClassroomSubject]: {
+    id: AppsScope.ClassroomSubject,
+  },
+  [AppsScope.ClassroomTopic]: {
+    id: AppsScope.ClassroomTopic,
   },
 };
 

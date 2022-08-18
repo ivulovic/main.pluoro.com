@@ -1,11 +1,11 @@
 .editor {
-  min-height: 250px;
+  min-height: 550px;
   display: grid;
   gap: 1.5rem;
   border-color: transparent !important;
 }
 .ql-editor {
-  min-height: 250px;
+  min-height: 550px;
   &:focus{
     border: 1px solid var(--text)!important;
   }

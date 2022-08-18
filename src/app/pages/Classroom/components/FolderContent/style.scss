@@ -4,6 +4,8 @@
   left: 110px;
   top: 0;
   box-shadow: 2rem 2rem 3rem rgba(0, 0, 0, 0.2);
+  min-width: 350px;
+  min-height: 200px;
   &.file-explorer {
     visibility: hidden;
     opacity: 0;
@@ -13,15 +15,6 @@
     transition: transform 0.5s, visibility 0.2s, opacity 0.2s;
     -webkit-transform-origin: left right;
     transform-origin: left right;
-  }
-  button {
-    background-color: var(--accent);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: none;
-    color: white;
   }
   &.active-folder {
     visibility: visible;
@@ -43,6 +36,16 @@
     text-align: center;
     position: relative;
     border-radius: 10px 10px 0 0;
+
+    button {
+      background-color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: none;
+      color: white;
+    }
   }
   .folder-close {
     position: absolute;

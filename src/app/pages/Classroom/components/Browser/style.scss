@@ -1,6 +1,7 @@
 .browser-wrap {
   position: absolute;
   width: 100%;
+  top: 2rem;
   left: 50%;
   border-radius: 10px 10px 0 0;
   &:not(.in-focus) {

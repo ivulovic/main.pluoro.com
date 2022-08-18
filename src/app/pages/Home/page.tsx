@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 import SearchInput from '@components/SearchInput';
 import Thumbnail from '@components/Thumbnail';
@@ -18,26 +18,24 @@ export default function Page(): JSX.Element {
   const isLoggedIn = useSelector(authController.implementation.auth.selectors.selectIsLoggedIn);
   return (
     <div className="page-wrapper home-page">
-      <div className="page-logo-wrapper">
+      <Link className="page-logo-wrapper" to={isLoggedIn ? '/' : '/sign-in'}>
         <Logo className="l" />
         <h1 className="logo-title">{t('appName')}</h1>
-      </div>
+      </Link>
       <SearchInput onSelect={onNavigate} />
       <div className="quick-access">
         {isLoggedIn ? (
           <>
             <Thumbnail link={'/notes'} icon={NoteIcon} title={'notesTitle'} />
             <Thumbnail link={'/wishlist'} icon={GiftIcon} title={'wishlistTitle'} />
+            <Thumbnail link={'/classroom'} icon={EducationIcon} title={'classroomTitle'} />
           </>
         ) : (
           <></>
         )}
-      </div>
-      <div className="quick-access">
         <Thumbnail link={'/covid19'} icon={VirusIcon} title={'covid19Title'} />
         <Thumbnail link={'/air-quality'} icon={PlantIcon} title={'airQualityTitle'} />
         <Thumbnail link={'/ambulances'} icon={HospitalIcon} title={'ambulancesTitle'} />
-        <Thumbnail link={'/classroom'} icon={EducationIcon} title={'classroomTitle'} />
       </div>
     </div>
   );

@@ -37,12 +37,13 @@ export default function UpdateDirectory(): JSX.Element {
   };
   return (
     <div className="view">
-      <form onSubmit={handleSubmit}>
+      <div>
         <h4>
           <FormattedMessage id="directory" />
         </h4>
         <Input value={name || model?.name} onChange={(e) => setName(e.target.value)} />
-      </form>
+      </div>
+      <Button kind="ghost" onClick={handleSubmit}>Save</Button>
     </div>
   );
 }

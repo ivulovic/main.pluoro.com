@@ -5,12 +5,12 @@ import { Button, RemoveIcon } from '@reactoso-ui';
 import FolderVisibilityContext from '../../FolderVisibility/FolderVisibilityContext';
 import './style.scss';
 
-export default function Browser({ children, onClose, title, contentHeight }) {
+export default function Browser({ children, onClose, title, id, contentHeight }) {
   const { lastOpened, setLastOpened } = useContext(FolderVisibilityContext);
-  const isCurrentlyOpened = lastOpened === title;
+  const isCurrentlyOpened = lastOpened === id;
   const handleSelection = () => {
     if (!isCurrentlyOpened) {
-      setLastOpened(title);
+      setLastOpened(id);
     }
   };
   return (

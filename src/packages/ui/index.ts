@@ -24,3 +24,4 @@ export { default as NoteIcon } from './icons/NoteIcon';
 export { default as RobotIcon } from './icons/RobotIcon';
 export { default as FolderIcon } from './icons/FolderIcon';
 export { default as EducationIcon } from './icons/EducationIcon';
+export { default as AddFolderIcon } from './icons/AddFolderIcon';

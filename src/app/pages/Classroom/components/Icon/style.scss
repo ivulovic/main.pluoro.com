@@ -1,29 +1,25 @@
+.load-icons .icon {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
 .icon {
-    -webkit-transition-delay: 0.15s;
-    transition-delay: 0.15s;
-  }
-  
-  .load-icons .icon {
-    opacity: 1;
-    -webkit-transform: translate(0, 0);
-    transform: translate(0, 0);
-  }
-  
-  .icon {
-    display: inline-block;
-    vertical-align: top;
-    text-align: center;
-    transition: opacity 0.8s, transform 0.8s;
-    cursor: pointer;
-  }
-  
-  .active .icon-title {
+  -webkit-transition-delay: 0.15s;
+  transition-delay: 0.15s;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  transition: opacity 0.8s, transform 0.8s;
+  cursor: pointer;
+
+  &.active .icon-title {
     background: var(--border-light);
   }
-  .active .icon-image {
+  &.active .icon-image {
     background: var(--border-light);
   }
-  
+
   .icon-image {
     width: 5.6rem;
     height: 4.6rem;
@@ -39,12 +35,82 @@
     font-weight: bold;
     font-size: 12px;
     color: var(--text);
-    margin-top: 0px;
-    margin-top: 8px;
+    margin-top: 6px;
     max-width: 5.6rem;
     border-radius: 6px;
     padding: 5px;
     box-sizing: border-box;
-    line-height: 15px;
+    line-height: 1rem;
   }
-  
+  .icon-tooltip {
+    position: absolute;
+    top: 25%;
+    white-space: nowrap;
+    background: #332a53;
+    z-index: 2;
+    border-radius: 5px;
+    padding: 9px;
+    box-sizing: border-box;
+    -webkit-transform: translate(0px, 0) rotate3d(0, 0, 1, 0deg);
+    transform: translate(0px, 0) rotate3d(0, 0, 1, 0deg);
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s, visibility 0.3s, -webkit-transform 0.3s;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    -webkit-transform-origin: right center;
+    transform-origin: right center;
+
+    button {
+      background-color: transparent;
+      color: white;
+      padding: 0;
+      &:hover{
+        color: var(--accent);
+      }
+    }
+  }
+  .icon-tooltip.left {
+    right: 100%;
+  }
+  .icon-tooltip.right {
+    left: 106%;
+  }
+  &:hover .icon-tooltip {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translate(0px, 0) rotate3d(0, 0, 1, 0deg);
+    transform: translate(0px, 0) rotate3d(0, 0, 1, 0deg);
+  }
+  .icon-tooltip div {
+    border: 5px solid transparent;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    margin-top: -5px;
+  }
+  .icon-tooltip.left div {
+    border-left-color: #332a53;
+    left: 100%;
+  }
+  .icon-tooltip.right div {
+    border-right-color: #332a53;
+    right: 100%;
+  }
+  .icon-tooltip p {
+    color: #fff;
+    font-family: 'Avenir', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+    display: flex;
+    gap: 1rem;
+    padding: 0 0.5rem;
+    a{
+      color: inherit;
+      &:hover{
+        color: var(--accent);
+      }
+    }
+  }
+}

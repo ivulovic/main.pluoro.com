@@ -1,6 +1,7 @@
 .home-page{
   .page-logo-wrapper{
     display: flex;
+    text-decoration: none;
     gap: 0.8rem;
     align-items: center;
     flex-direction: column;
@@ -19,6 +20,8 @@
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(180px, max-content));
+    // grid-template-columns: repeat(3, minmax(180px, max-content));
+
     grid-gap: 1rem;
     margin-bottom: 1rem;
   }
