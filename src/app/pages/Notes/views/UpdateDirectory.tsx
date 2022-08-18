@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import { useNotesControllerScope } from '@controllers/app';
 import { AppsScope } from '@controllers/app/settings';
-import { Input } from '@reactoso-ui';
+import { Button, Input } from '@reactoso-ui';
 import { useSelector } from '@service';
 import { FormattedMessage } from '@translations';
 

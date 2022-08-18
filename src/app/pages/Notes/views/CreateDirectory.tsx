@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
 import { useNotesControllerScope } from '@controllers/app';
 import { Button, Input } from '@reactoso-ui';
 import { FormattedMessage } from '@translations';
